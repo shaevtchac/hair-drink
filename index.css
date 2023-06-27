@@ -1,0 +1,69 @@
+@import url(preflight.css);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+}
+
+@layer components {
+  button {
+    @apply bg-primary rounded-md text-white font-bold uppercase px-6 py-1;
+    transition: 300ms ease-in;
+  }
+  button:hover {
+    transform: scale(1.1);
+  }
+}
+
+@layer utilities {
+}
+
+/* _____________________________________________________ animations ________________________________________________ */
+
+@keyframes fade-from-left {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-from-right {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-from-bottom {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes scale-up {
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes zoom-in-down {
+  from {
+    opacity: 0;
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
